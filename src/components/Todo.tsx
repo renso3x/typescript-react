@@ -3,9 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import { ListItem, ListItemText } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
-  textField: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1)
+  item: {
+    backgroundColor: theme.palette.background.paper,
+    color: theme.palette.grey[800]
   }
 }));
 
@@ -14,8 +14,9 @@ export interface TodoProps {
 }
 
 const Todo: React.SFC<TodoProps> = ({ name }) => {
+  const classes = useStyles();
   return (
-    <ListItem button>
+    <ListItem className={classes.item} button>
       <ListItemText primary={name} />
     </ListItem>
   );
