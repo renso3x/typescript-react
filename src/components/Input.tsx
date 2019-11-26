@@ -9,9 +9,11 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export interface InputProps {}
+export interface InputProps {
+  onSubmit: React.FormEventHandler;
+}
 
-const Input: React.SFC<InputProps> = () => {
+const Input: React.SFC<InputProps> = ({ onSubmit }) => {
   const classes = useStyles();
   return (
     <TextField
@@ -19,6 +21,7 @@ const Input: React.SFC<InputProps> = () => {
       name="task"
       placeholder="Task todo..."
       className={classes.textField}
+      onBlue={onSubmit}
       fullWidth
     />
   );
